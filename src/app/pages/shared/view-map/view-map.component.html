@@ -1,0 +1,13 @@
+<ion-header text-center *ngIf="userType=='parent'">
+  <ion-toolbar class="background" color="#587FBB" id="toolbar">
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back" class="back" (click)="navigateBack()"></ion-icon>
+    </ion-buttons>
+    <ion-title class="title">Live Map</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content id="map"></ion-card-content>
+  </ion-card>
+</ion-content>

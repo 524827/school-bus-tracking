@@ -1,0 +1,91 @@
+<div class="col-lg-6">
+</div>
+<div class="col-lg-6">
+  <nb-card>
+    <nb-card-header>Add Schools</nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="schoolForm" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <input type="text" nbInput fullWidth shape="semi-round" formControlName="schoolName" placeholder="School Name">
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.schoolName">
+              <div class="error-message"
+                *ngIf="schoolForm.get('schoolName').hasError(validation.type) && (schoolForm.get('schoolName').dirty || schoolForm.get('schoolName').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <br>
+        <div class="input-group">
+          <input type="text" nbInput fullWidth shape="semi-round" formControlName="branchName" placeholder="Branch Name">
+          </div>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.branchName">
+              <div class="error-message"
+                *ngIf="schoolForm.get('branchName').hasError(validation.type) && (schoolForm.get('branchName').dirty || schoolForm.get('branchName').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <br>
+          <div class="row full-name-inputs">
+            <div class="col-sm-6 input-group">
+              <input type="text" nbInput fullWidth formControlName="officeNumber" placeholder="Office Number">
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.mobileNumber">
+                  <div class="error-message"
+                    *ngIf="schoolForm.get('officeNumber').hasError(validation.type) && (schoolForm.get('officeNumber').dirty || schoolForm.get('officeNumber').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <br>
+            <div class="col-sm-6 input-group">
+              <input type="text" nbInput fullWidth formControlName="officeEmail" placeholder="Office Email">
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.email">
+                  <div class="error-message"
+                    *ngIf="schoolForm.get('officeEmail').hasError(validation.type) && (schoolForm.get('officeEmail').dirty || schoolForm.get('officeEmail').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="input-group">
+            <textarea rows="5" nbInput fullWidth shape="round" formControlName="address" placeholder="Address"></textarea>
+          </div>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.address">
+              <div class="error-message"
+                *ngIf="schoolForm.get('address').hasError(validation.type) && (schoolForm.get('address').dirty || schoolForm.get('address').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <br>
+          <div class="col file-upload">
+          <div class="file-upload">
+            <div class="file-select">
+              <div class="file-select-button" id="fileName">Choose File</div>
+              <div class="file-select-name" id="noFile">No file chosen...</div>
+              <input type="file" (change)="fileChangeEvent($event)" name="chooseFile" formControlName="photo" id="chooseFile" ng2FileSelect>
+                  </div>
+            </div>
+          </div>
+            <br>
+            <div class="row">
+              <div class="container-btn col-sm-3">
+                <button nbButton status="success" class="btn-demo" type="submit">Submit</button>
+              </div>
+              <div class="container-btn col-sm-3">
+                <button nbButton status="danger" class="btn-demo" (click)="onClear()">Clear</button>
+              </div>
+            </div>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>

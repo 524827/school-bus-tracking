@@ -1,0 +1,39 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header text-center class="loginHeader">Login</ion-card-header>
+
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm)">
+
+      <ion-card-content>
+
+        <ion-select formControlName="userType" placeholder="--Select Type--" class="userType">
+          <ion-select-option value="driver">Driver</ion-select-option>
+          <ion-select-option value="parent">Parents</ion-select-option>
+          <ion-select-option value="busCoordinator">Bus Co-ordinator</ion-select-option>
+
+        </ion-select>
+
+        <ion-input type="text" clearInput class="credintials" formControlName="userName" placeholder="  User Name">
+        </ion-input>
+
+        <ion-input type="password" clearInput class="credintials" formControlName="userPassword"
+          placeholder="  Password">
+        </ion-input>
+
+        <ion-button expand="block" class="loginButton" color="#7986cb" type="submit" [disabled]="loginForm.invalid">
+          Login
+        </ion-button>
+
+        <ion-card-header text-center class="forgetPassword" (click)="forgetPassword()">
+          Forget Password ?
+        </ion-card-header>
+      </ion-card-content>
+
+    </form>
+
+
+
+  </ion-card>
+
+
+</ion-content>

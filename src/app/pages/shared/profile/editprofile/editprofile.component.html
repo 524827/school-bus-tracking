@@ -1,0 +1,114 @@
+<ion-header text-center>
+  <ion-toolbar class="background" color="#587FBB" id="toolbar">
+    <ion-buttons slot="start">
+      <ion-icon name="close" id="closeIcon" class="close" (click)="closeModal()"></ion-icon>
+    </ion-buttons>
+    <ion-title class="title">Edit Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="checkmark" class="done" (click)="onSubmit(profileForm)"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="profileData">
+  <ion-card class="profileCard">
+    <ion-card-content class="content">
+      <ion-grid>
+        <form [formGroup]="profileForm">
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input id="fullName" [(ngModel)]="profileData.fullName" formControlName="fullName"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.fullName">
+              <div class="error-message"
+                *ngIf="profileForm.get('fullName').hasError(validation.type) && (profileForm.get('fullName').dirty || profileForm.get('fullName').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item>
+            <ion-label position="floating">Address</ion-label>
+            <ion-input id="address" [(ngModel)]="profileData.address" formControlName="address"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.address">
+              <div class="error-message"
+                *ngIf="profileForm.get('address').hasError(validation.type) && (profileForm.get('address').dirty || profileForm.get('address').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item>
+            <ion-label position="floating">Mobile Number</ion-label>
+            <ion-input id="mobileNumber" [(ngModel)]="profileData.mobileNumber" formControlName="mobileNumber">
+            </ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.mobileNumber">
+              <div class="error-message"
+                *ngIf="profileForm.get('mobileNumber').hasError(validation.type) && (profileForm.get('mobileNumber').dirty || profileForm.get('mobileNumber').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item>
+            <ion-label position="floating">Alternate Number</ion-label>
+            <ion-input id="alternateNumber" [(ngModel)]="profileData.alternateNumber" formControlName="altNumber">
+            </ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.altNumber">
+              <div class="error-message"
+                *ngIf="profileForm.get('altNumber').hasError(validation.type) && (profileForm.get('altNumber').dirty || profileForm.get('altNumber').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item>
+            <ion-label position="floating">Email Address</ion-label>
+            <ion-input id="email" [(ngModel)]="profileData.email" formControlName="email"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.email">
+              <div class="error-message"
+                *ngIf="profileForm.get('email').hasError(validation.type) && (profileForm.get('email').dirty || profileForm.get('email').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input id="username" [(ngModel)]="profileData.userName" formControlName="username"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input id="password" formControlName="password"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.passwod">
+              <div class="error-message"
+                *ngIf="profileForm.get('password').hasError(validation.type) && (profileForm.get('password').dirty || profileForm.get('password').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item>
+            <ion-label position="floating">confirm Password</ion-label>
+            <ion-input id="confirmPassword" formControlName="confirmPassword"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.confirmPassword">
+              <div class="error-message"
+                *ngIf="profileForm.get('confirmPassword').hasError(validation.type) && (profileForm.get('confirmPassword').dirty || profileForm.get('confirmPassword').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+         <!--  <ion-button expand="block" color="#587FBB" class="submitButton" type="submit">
+            Update
+          </ion-button> -->
+        </form>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

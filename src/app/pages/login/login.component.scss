@@ -1,0 +1,76 @@
+$inputBoxHeight:45px;
+$inputButtonHeight:50px;
+$inputBoxBackgroundColor:white;
+$fontWeight:bold;
+$inputColor:black;
+$inputMarginTop:35px;
+$inputPaddingLeft:30px;
+
+
+ion-card {
+  position: relative;
+  top: 25%;
+  box-shadow: none;
+}
+
+ion-content {
+  --background: linear-gradient(rgba(20, 20, 20, .4),
+    rgba(20, 20, 20, .5)), url('../../../assets/default/loginBus.jpg')no-repeat center center / cover;
+}
+
+ion-icon {
+  font-size: 100px;
+  color: black;
+  position: absolute;
+  top: 70px;
+  left: 150px;
+}
+
+.loginHeader {
+  color: $inputBoxBackgroundColor;
+  font-weight: $fontWeight;
+  font-size: 30px;
+}
+
+.userType {
+  background-color: white;
+  background-image: url('../../../assets/default/select.png');
+  background-size: 101% 45px;
+  background-repeat: no-repeat;
+  color: $inputColor;
+  font-size: 15px;
+  height: $inputBoxHeight;
+  border-radius: 15px;
+  border-right: 1px solid black;
+  margin-top: 15px;
+  margin-left: 10%;
+  margin-left: 10%;
+  width: 80%;
+  box-shadow: none;
+}
+
+.credintials {
+  background-color: white;
+  color: $inputColor;
+  font-size: 15px;
+  height: $inputBoxHeight;
+  border-radius: 15px;
+  margin-top: $inputMarginTop;
+  margin-left: 10%;
+  width: 80%;
+}
+
+.loginButton {
+  margin-top: 40px;
+  height: $inputButtonHeight;
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: #7986cb;
+  margin-left: 10%;
+  width: 80%;
+}
+
+.forgetPassword {
+  color: $inputBoxBackgroundColor;
+  font-size: 18px;
+}

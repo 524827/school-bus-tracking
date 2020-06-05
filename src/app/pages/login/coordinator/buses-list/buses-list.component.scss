@@ -1,0 +1,77 @@
+.busProfile {
+  width: 100%;
+  height: 100%;
+  padding-top: none;
+
+}
+
+ion-content {
+  --background: #f3f7fd;
+}
+
+ion-card-content {
+  border-bottom: 1px solid rgb(214, 205, 205);
+
+}
+
+ion-tab-button [aria-selected=true] {
+  border: none;
+  box-shadow: 0px 2px 0px 0px #488aff inset;
+}
+
+ion-icon {
+  font-size: 25px;
+  color: #7986cb;
+}
+
+ion-card {
+  width: 88%;
+  height: auto;
+  --background: white;
+  margin-left: 6%;
+  margin-right: 6%;
+
+}
+
+.infoButton {
+  width: 100%;
+  font-size: 8px;
+  font-weight: bold;
+  padding-top: 10px;
+  --background: #7986cb;
+  border: radius 20;
+}
+
+.busInfoCol {
+  padding-top: none;
+}
+
+.busStatusActive {
+  padding-top: 5px;
+  font-size: 18px;
+}
+
+.busStatusParked {
+  padding-top: 5px;
+  font-size: 18px;
+}
+
+
+.info {
+  color: black;
+  font-size: 18px;
+}
+
+.statusCircleActive {
+  border: none;
+  color: rgb(22, 216, 22);
+  font-size: 15px;
+  padding-right: 5px;
+}
+
+.statusCircleParked {
+  border: none;
+  color: red;
+  font-size: 15px;
+  padding-right: 5px;
+}

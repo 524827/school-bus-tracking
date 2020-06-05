@@ -1,0 +1,23 @@
+import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { BusRouteComponent } from './bus-route.component';
+
+@NgModule({
+  imports: [
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    RouterModule.forChild([
+      {
+        // Route for buses-route compomnent.
+        path: '',
+        component: BusRouteComponent,
+      },
+    ]),
+  ],
+  declarations: [BusRouteComponent],
+})
+export class BusRouteComponentModule {}

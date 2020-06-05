@@ -1,0 +1,21 @@
+<ion-tabs>
+  <ion-tab-bar slot="top">
+    <div class="tabbar">
+      <ion-tab-button tab="bus-route" (click)="busRouteStyle()">
+        <ion-item [ngClass]="{'show':routeStatus,'hide':!routeStatus}">
+          <ion-icon name="navigate" class="tabImage">
+          </ion-icon>
+          <ion-label>Routes</ion-label>
+        </ion-item>
+      </ion-tab-button>
+    </div>
+    <div class="tabbar">
+      <ion-tab-button tab="livemap/{{userType}}/{{driverId}}" (click)="liveMapStyle()">
+        <ion-item [ngClass]="{'show':livemapStatus,'hide':!livemapStatus}">
+          <ion-icon name="map" class="tabImage"></ion-icon>
+          <ion-label>Live Map</ion-label>
+        </ion-item>
+      </ion-tab-button>
+    </div>
+  </ion-tab-bar>
+</ion-tabs>

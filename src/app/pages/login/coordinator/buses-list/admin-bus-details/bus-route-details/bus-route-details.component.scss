@@ -1,0 +1,72 @@
+ion-card-header {
+  --background: rgba(240, 240, 240, 0.945);
+}
+
+
+.iterableRow {
+  height: 80px;
+}
+
+.iterableCol {
+  padding-top: 20px;
+}
+
+
+.stopsLine {
+  background-color: rgb(179, 179, 179);
+  width: 10px;
+  height: 160%;
+
+  position: relative;
+  left: 45%;
+  //margin-left: 48%;
+  //margin-right: 47.5%;
+
+}
+
+.circleDiv {
+  background-color: rgb(51, 50, 50);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 18%;
+  z-index: 1;
+
+}
+
+.busIcon {
+  position: absolute;
+  top: 5%;
+  left: 21%;
+  zoom: 220%;
+  z-index: 1;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+}
+
+.schoolIcon {
+  position: absolute;
+  top: 15%;
+  left: 21%;
+  zoom: 220%;
+  z-index: 1;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+}
+
+.abc {}
+
+.arrowRight {
+
+  font-size: 40px;
+  color: black;
+}
+
+b {
+  color: rgb(53, 128, 199);
+}

@@ -1,0 +1,42 @@
+<ion-header text-center>
+  <ion-toolbar class="background" color="#587FBB" id="toolbar">
+    <ion-buttons slot="start">
+      <ion-title text-left>Admin</ion-title>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon src="{{svgIcons}}/adminProfile.svg" id="profileIcon"
+        (click)="navigateToProfile(userType,busCoordinatorId)" onError="this.src='../../../../assets/default/admin.png'"
+        class="profileImage">
+      </ion-icon>
+      <img src="" id="profileIconImage" (click)="navigateToProfile(userType,busCoordinatorId)"
+          class="profileIconImage" onError="this.src='../../../../assets/default/admin.png'">
+      <ion-icon name="log-out" class="logOutImage" (click)="logout()">
+      </ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="top">
+      <div id="tabDivForBusList">
+        <ion-tab-button tab="buses-list/{{userType}}" (click)="changeLookOfBusList()">
+          <ion-item>
+            <ion-icon src="{{svgIcons}}/adminBus.svg" class="tabImage">
+            </ion-icon>
+            <ion-label>List of Bus</ion-label>
+          </ion-item>
+        </ion-tab-button>
+      </div>
+      <div id="tabDivForBusRoute">
+        <ion-tab-button tab="bus-route" (click)="changeLookOfBusRoute()">
+          <ion-item>
+            <ion-icon src="{{svgIcons}}/adminMap.svg" class="tabImage">
+            </ion-icon>
+            <ion-label>Live Map</ion-label>
+          </ion-item>
+        </ion-tab-button>
+      </div>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

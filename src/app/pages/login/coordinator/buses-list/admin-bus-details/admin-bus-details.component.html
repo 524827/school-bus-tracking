@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar id="toolbar" text-center>
+    <ion-icon class="backNavigationIcon" slot="start" name="arrow-back" (click)="navigateBack()"></ion-icon>
+    {{vehicleNumber}}
+  </ion-toolbar>
+</ion-header>
+<!-- <ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="top">
+      <div id="tabDivForBusList">
+        <ion-tab-button id="routeTabButton" tab="bus-route-details/{{vehicleId}}" (click)="changeLookOfBusList()">
+          <ion-item>
+            <ion-icon name="navigate" class="tabImage">
+            </ion-icon>
+            <ion-label>Routes</ion-label>
+          </ion-item>
+        </ion-tab-button>
+      </div>
+      <div id="tabDivForBusRoute">
+        <ion-tab-button tab="bus-details/{{userType}}/{{vehicleId}}" (click)="changeLookOfBusRoute()">
+          <ion-item>
+            <ion-icon name="bus" class="tabImage">
+            </ion-icon>
+            <ion-label>Details</ion-label>
+          </ion-item>
+        </ion-tab-button>
+      </div>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content> -->
+
+<ion-tabs>
+  <ion-tab-bar slot="top">
+    <div class="tabbar">
+      <ion-tab-button tab="bus-route-details" (click)="busRouteStyle()">
+        <ion-item [ngClass]="{'show':routeStatus,'hide':!routeStatus}">
+          <ion-icon name="navigate" class="tabImage">
+          </ion-icon>
+          <ion-label>Routes</ion-label>
+        </ion-item>
+      </ion-tab-button>
+    </div>
+    <div class="tabbar">
+      <ion-tab-button tab="bus-details/{{userType}}/{{vehicleId}}" (click)="liveMapStyle()">
+        <ion-item [ngClass]="{'show':livemapStatus,'hide':!livemapStatus}">
+          <ion-icon name="bus" class="tabImage"></ion-icon>
+          <ion-label>Details</ion-label>
+        </ion-item>
+      </ion-tab-button>
+    </div>
+  </ion-tab-bar>
+</ion-tabs>

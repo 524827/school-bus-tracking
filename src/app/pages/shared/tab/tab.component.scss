@@ -1,0 +1,22 @@
+.tabImage {
+  width: 25px;
+  color: black;
+}
+
+ion-item {
+  height: 45px;
+  width: 100%;
+  --background: none;
+}
+
+.tabbar {
+  width: 49%;
+}
+
+.show {
+  box-shadow: inset 0px -1px 5px #cccccc, inset 0px -3px 0px rgba(0, 158, 231, 0.8), inset 0px -1px 5px #cccccc;
+}
+
+.hide {
+  box-shadow: inset 0px -1px 5px rgba(240, 242, 243, 0.938);
+}

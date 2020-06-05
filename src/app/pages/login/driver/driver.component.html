@@ -1,0 +1,17 @@
+<ion-header text-center>
+  <ion-toolbar color="#587FBB" id="toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button id="content"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Driver</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="notifications-outline" class="notification" (click)="presentModal($event)"></ion-icon>
+      <!-- <ion-icon src="../../../../assets/images/adminProfile.svg" class="profileImage">
+      </ion-icon> -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <app-sidebar [pages]="pages"></app-sidebar>
+  <app-tab></app-tab>
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-content>
+  <ion-card no-margin>
+    <ion-card-header>
+      <ion-grid no-margin>
+        <ion-row no-padding>
+          <ion-col size="5" no-padding>
+            <ion-row no-padding>
+              <ion-col size="12" text-left no-padding>{{startPoint.stop}}</ion-col>
+            </ion-row>
+            <ion-row no-padding>
+              <ion-col size="12" text-left no-padding><b >Departure: </b> {{startPoint.time.morning}}</ion-col>
+            </ion-row>
+          </ion-col>
+          <ion-col size="2" text-center no-padding>
+            <ion-icon class="arrowRight" no-padding src="{{svgIcons}}/arrowRight.svg">
+            </ion-icon>
+          </ion-col>
+          <ion-col size="5" no-padding>
+            <ion-row no-padding>
+              <ion-col size="12" text-right no-padding>{{schoolData.stop}}</ion-col>
+            </ion-row>
+            <ion-row no-padding>
+              <ion-col size="12" text-right no-padding><b >Arrival: </b> {{schoolData.time.morning}}</ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+
+    <ion-card-content padding margin *ngIf="routeData.length>0">
+      <ion-row>
+        <ion-col size="2">
+          <ion-icon class="busIcon" id="busIcon" src="{{svgIcons}}/whiteBus.svg">
+          </ion-icon>
+          <div class="stopsLine"></div>
+        </ion-col>
+        <ion-col size="4" text-center></ion-col>
+        <ion-col size="3" text-center><b>Morning</b></ion-col>
+        <ion-col size="3" text-center><b>Afternoon</b></ion-col>
+      </ion-row>
+      <ion-row class="iterableRow" *ngFor="let route of routeData">
+        <ion-col size="2" class="abc">
+
+
+
+
+
+          <div class="stopsLine">
+            <div class="circleDiv">
+
+            </div>
+          </div>
+
+
+        </ion-col>
+        <ion-col size="4" text-left class="iterableCol">{{route.stop}}</ion-col>
+        <ion-col size="3" text-center class="iterableCol">{{route.time.morning}}</ion-col>
+        <ion-col size="3" text-center class="iterableCol">{{route.time.afternoon}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2" class="iterableRow">
+          <ion-icon class="schoolIcon" id="schoolIcon" src="{{svgIcons}}/whiteSchool.svg">
+          </ion-icon>
+        </ion-col>
+        <ion-col size="4" text-justify class="iterableCol">{{schoolData.stop}}</ion-col>
+        <ion-col size="3" text-center class="iterableCol">{{schoolData.time.morning}}</ion-col>
+        <ion-col size="3" text-center class="iterableCol">{{schoolData.time.afternoon}}</ion-col>
+      </ion-row>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

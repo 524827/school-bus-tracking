@@ -1,0 +1,77 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-crop": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-firebase": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-mauron85-background-geolocation": {
+      "GOOGLE_PLAY_SERVICES_VERSION": "11+",
+      "ANDROID_SUPPORT_LIBRARY_VERSION": "27+",
+      "ICON": "@mipmap/icon",
+      "SMALL_ICON": "@mipmap/icon",
+      "ACCOUNT_NAME": "@string/app_name",
+      "ACCOUNT_LABEL": "@string/app_name",
+      "ACCOUNT_TYPE": "$PACKAGE_NAME.account",
+      "CONTENT_AUTHORITY": "$PACKAGE_NAME",
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-nativegeocoder": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.ionic.busApp"
+    }
+  }
+}

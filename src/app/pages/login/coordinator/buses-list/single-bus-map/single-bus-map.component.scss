@@ -1,0 +1,77 @@
+#toolbar {
+  --background: #7986cb;
+  color: white;
+  font-size: 20px;
+}
+
+ion-title {
+  padding-top: 5%;
+  font-size: 25px;
+}
+
+ion-icon {
+  float: right;
+  font-size: 45px;
+}
+
+ion-content {}
+
+
+ion-tab-bar {
+
+  padding: 3% 0%;
+  margin: 0% 5%;
+  border-bottom: none;
+}
+
+
+
+.logOutImage {
+  width: 40px;
+}
+
+.profileImage {
+  width: 40px;
+}
+
+.tabImage {
+  width: 25px;
+  color: black;
+}
+
+ion-item {
+  height: 41px;
+  --background: none;
+}
+
+.abc {
+  font-size: 50px;
+  stroke: none !important
+}
+
+.backNavigationIcon {
+  font-size: 30px;
+  padding-left: 10px;
+}
+
+.icon-inner,
+svg {
+  display: block;
+  fill: currentColor;
+  stroke: none;
+  height: 100%;
+  width: 100%;
+}
+
+#tabDivForBusList {
+  width: 49%;
+  background-color: white;
+  box-shadow: inset 1px 1px 5px #cccccc, inset 0px -3px 0px rgba(0, 158, 231, 0.8), 0px 1px 5px #cccccc;
+}
+
+#tabDivForBusRoute {
+  width: 49%;
+  background-color: white;
+  box-shadow: 1px 1px 5px #cccccc;
+  // box-shadow: 0px 10px 2px rgba(0, 0, 0, 0.80), 0 -10px 2px -5px #7b272c;
+}

@@ -1,0 +1,163 @@
+<div class="row">
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Add Driver</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="driverForm">
+          <div class="input-group">
+            <input type="text" nbInput fullWidth shape="semi-round" formControlName="driverName"
+            placeholder="Driver Name"/>
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.driverName">
+                <div class="error-message" *ngIf="driverForm.get('driverName').hasError(validation.type) &&
+                  (driverForm.get('driverName').dirty || driverForm.get('driverName').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <input type="text" nbInput fullWidth shape="semi-round" formControlName="driverEmail"
+              placeholder="Driver Email"/>
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.email">
+                <div class="error-message" *ngIf="driverForm.get('driverEmail').hasError(validation.type) &&
+                (driverForm.get('driverEmail').dirty ||driverForm.get('driverEmail').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <input type="text" nbInput fullWidth shape="semi-round" formControlName="primNumber"
+             placeholder="Primary Mobile Number"/>
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.mobileNumber">
+                <div class="error-message" *ngIf="driverForm.get('primNumber').hasError(validation.type) &&
+                  (driverForm.get('primNumber').dirty ||driverForm.get('primNumber').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <input type="text" nbInput fullWidth shape="semi-round" formControlName="secNumber"
+           placeholder="Secondary Mobile Number" />
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.mobileNumber">
+                <div class="error-message"
+                  *ngIf="driverForm.get('secNumber').hasError(validation.type) &&(driverForm.get('secNumber').dirty ||driverForm.get('secNumber').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <input type="text" nbInput fullWidth shape="semi-round" formControlName="licenseNumber"
+             placeholder="Licence Number" />
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.licenseNumber">
+                <div class="error-message" *ngIf="driverForm.get('licenseNumber').hasError(validation.type) &&
+                  (driverForm.get('licenseNumber').dirty ||driverForm.get('licenseNumber').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <nb-select placeholder="School Name" formControlName="school_id" shape="round">
+              <nb-option [value]="school.school_id" *ngFor="let school of schoolName">{{school.school_name}}</nb-option>
+            </nb-select>
+          </div>
+          <div class="input-group">
+            <textarea rows="5" nbInput fullWidth shape="round" formControlName="currentAddr" placeholder="Current Address"></textarea>
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.address">
+                <div class="error-message"
+                  *ngIf="driverForm.get('currentAddr').hasError(validation.type) && (driverForm.get('currentAddr').dirty || driverForm.get('currentAddr').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <textarea rows="5" nbInput fullWidth shape="round" formControlName="parmanentAddr" placeholder=" Parmenent Address"></textarea>
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.address">
+                <div class="error-message"
+                  *ngIf="driverForm.get('parmanentAddr').hasError(validation.type) && (driverForm.get('parmanentAddr').dirty || driverForm.get('parmanentAddr').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <input type="text" nbInput fullWidth shape="semi-round" formControlName="adharNumber"
+             placeholder="Adhar Number" />
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.adharNumber">
+                <div class="error-message" *ngIf="driverForm.get('adharNumber').hasError(validation.type) &&
+                    (driverForm.get('adharNumber').dirty ||driverForm.get('adharNumber').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <input type="text" nbInput fullWidth shape="semi-round" formControlName="panNumber"
+             placeholder="PAN Number" />
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.panNumber">
+                <div class="error-message" *ngIf="driverForm.get('panNumber').hasError(validation.type) &&
+                    (driverForm.get('panNumber').dirty ||driverForm.get('panNumber').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="file-upload">
+              <div class="file-select">
+                <div class="file-select-button" id="fileName">Choose File</div>
+                <div class="file-select-name" id="noFile">No file chosen...</div>
+                <input type="file" formControlName="photo" (change)="handleFileInput($event)" name="chooseFile" id="chooseFile" />
+                </div>
+              </div>
+            </div>
+            <div class="input-group">
+              <input type="text" nbInput fullWidth shape="semi-round" formControlName="username"
+                   placeholder="Username" />
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.username">
+                  <div class="error-message" *ngIf="driverForm.get('username').hasError(validation.type) &&
+                     (driverForm.get('username').dirty || driverForm.get('username').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div class="input-group">
+              <input type="text" nbInput fullWidth shape="semi-round" formControlName="password"
+               placeholder="Password"/>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.password">
+                  <div class="error-message" *ngIf="driverForm.get('password').hasError(validation.type) &&
+                    (driverForm.get('password').dirty ||driverForm.get('password').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div class="row">
+              <div class="container-btn col-sm-3">
+                <button nbButton status="success" class="btn-demo"  (click)="onSubmit()">Submit</button>
+              </div>
+              <div class="container-btn col-sm-3">
+                <button nbButton status="danger" class="btn-demo">Clear</button>
+              </div>
+            </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

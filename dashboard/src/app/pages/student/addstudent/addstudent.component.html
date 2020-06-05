@@ -1,0 +1,103 @@
+<div class="col-lg-6">
+</div>
+<div class="col-lg-6">
+  <nb-card>
+    <nb-card-header>Add New Student</nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="studentForm" (ngSubmit)="onSubmit(studentForm)">
+        <div class="input-group">
+          <input type="text" nbInput fullWidth shape="semi-round" formControlName="studentName" placeholder="Student Name">
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.fullName">
+              <div class="error-message"
+                *ngIf="studentForm.get('studentName').hasError(validation.type) && (studentForm.get('studentName').dirty || studentForm.get('studentName').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="row full-name-inputs">
+          <div class="col-sm-4 input-group">
+            <nb-select placeholder="Gender" formControlName="gender" shape="round">
+              <nb-option [value]="gender" *ngFor="let gender of gender">{{gender}}</nb-option>
+            </nb-select>
+          </div>
+
+          <div class="col-sm-4 input-group">
+            <nb-select placeholder="Class" formControlName="class" shape="round">
+              <nb-option [value]="class" *ngFor="let class of studClass">{{class}}</nb-option>
+            </nb-select>
+          </div>
+          <div class="col-sm-4 input-group">
+            <nb-select placeholder="Division" formControlName="division" shape="round">
+              <nb-option [value]="div" *ngFor="let div of division">{{div}}</nb-option>
+            </nb-select>
+          </div>
+        </div>
+        <div class="input-group">
+          <textarea rows="5" nbInput fullWidth shape="round" formControlName="currentAddress" placeholder="Current Address"></textarea>
+
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.address">
+              <div class="error-message"
+                *ngIf="studentForm.get('currentAddress').hasError(validation.type) && (studentForm.get('currentAddress').dirty || studentForm.get('currentAddress').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="input-group">
+          <textarea rows="5" nbInput fullWidth shape="round" formControlName="permanentAddress" placeholder=" Permanent Address"></textarea>
+
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.address">
+              <div class="error-message"
+                *ngIf="studentForm.get('permanentAddress').hasError(validation.type) && (studentForm.get('permanentAddress').dirty || studentForm.get('permanentAddress').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <input type="text" nbInput fullWidth shape="semi-round" formControlName="studentStop" placeholder="Stop Location">
+
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.address">
+              <div class="error-message"
+                *ngIf="studentForm.get('studentStop').hasError(validation.type) && (studentForm.get('studentStop').dirty || studentForm.get('studentStop').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="row full-name-inputs">
+          <div class="col-sm-6 input-group">
+            <nb-select multiple placeholder="Routes" formControlName="routes" shape="round">
+              <nb-option [value]="route.id" *ngFor="let route of routes">{{route.id}}</nb-option>
+            </nb-select>
+          </div>
+        </div>
+
+        <div class="file-upload">
+          <div class="file-select">
+            <div class="file-select-button" id="fileName">Choose File</div>
+            <div class="file-select-name" id="noFile">No file chosen...</div>
+            <input type="file" (change)="fileChangeEvent($event)" name="chooseFile" formControlName="photo" id="chooseFile" ng2FileSelect>
+                  </div>
+          </div>
+
+          <div class="row">
+            <div class="container-btn col-sm-3">
+              <button nbButton status="success" class="btn-demo">Submit</button>
+            </div>
+            <div class="container-btn col-sm-3">
+              <button nbButton status="danger" class="btn-demo">Clear</button>
+            </div>
+          </div>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>

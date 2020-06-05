@@ -1,0 +1,41 @@
+.back {
+  zoom: 2.0;
+}
+
+.icons {
+  padding-top: 16px;
+}
+
+#toolbar {
+  --background: #7986cb;
+  color: white;
+}
+
+ion-toolbar {
+  background-color: rgb(125, 140, 209);
+}
+
+/* ion-icon {
+  margin-top: 6px;
+}
+ */
+ion-card {
+  margin: 20px;
+  height: auto;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* ion-row {
+  margin: 5px;
+} */

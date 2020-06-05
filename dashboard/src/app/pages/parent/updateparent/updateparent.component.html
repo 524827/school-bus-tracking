@@ -1,0 +1,127 @@
+<div class="modal-header">
+  <span>{{ modalHeader }}</span>
+  <button class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="UpdateparentForm" (ngSubmit)="update(UpdateparentForm)">
+    <div class="input-group">
+      <input type="text" nbInput fullWidth shape="semi-round" value="{{ParentprofileData.parentName}}" formControlName="parentName" placeholder="Parent Name">
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.fullname">
+          <div class="error-message"
+            *ngIf="UpdateparentForm.get('fullName').hasError(validation.type) && (UpdateparentForm.get('fullName').dirty || UpdateparentForm.get('fullName').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="row full-name-inputs">
+      <div class="col-sm-6 input-group">
+        <input type="text" nbInput fullWidth value="{{ParentprofileData.fathermobileNumber}}" formControlName="father_mobileNumber" placeholder="Father Mobile Number">
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.mobileNumber">
+            <div class="error-message"
+              *ngIf="UpdateparentForm.get('father_mobileNumber').hasError(validation.type) && (UpdateparentForm.get('father_mobileNumber').dirty || UpdateparentForm.get('father_mobileNumber').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="col-sm-6 input-group">
+        <input type="text" nbInput fullWidth value="{{ParentprofileData.mothermobileNumber}}" formControlName="mother_mobileNumber" placeholder="Mother Mobile Number">
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.mobileNumber">
+            <div class="error-message"
+              *ngIf="UpdateparentForm.get('mother_mobileNumber').hasError(validation.type) && (UpdateparentForm.get('mother_mobileNumber').dirty || UpdateparentForm.get('mother_mobileNumber').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="row full-name-inputs">
+      <div class="col-sm-6 input-group">
+        <input type="text" nbInput fullWidth value="{{ParentprofileData.landlineNumber}}" formControlName="landline_Number" placeholder="Landline Number">
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.altNumber">
+            <div class="error-message"
+              *ngIf="UpdateparentForm.get('landline_Number').hasError(validation.type) && (UpdateparentForm.get('landline_Number').dirty || UpdateparentForm.get('landline_Number').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="col-sm-6 input-group">
+        <input type="text" nbInput fullWidth value="{{ParentprofileData.alternateNumber}}" formControlName="alternate_Number" placeholder="Alternate Number">
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.altNumber">
+            <div class="error-message"
+              *ngIf="UpdateparentForm.get('alternate_Number').hasError(validation.type) && (UpdateparentForm.get('alternate_Number').dirty || UpdateparentForm.get('alternate_Number').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="input-group">
+      <input rows="5" nbInput fullWidth  value="{{ParentprofileData.email}}" shape="round" formControlName="email" placeholder="Email-Id">
+
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-message"
+            *ngIf="UpdateparentForm.get('email').hasError(validation.type) && (UpdateparentForm.get('email').dirty || UpdateparentForm.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="row full-name-inputs">
+      <div class="input-group">
+        <input rows="5" nbInput fullWidth value="{{ParentprofileData.username}}"  shape="round" formControlName="username" placeholder="Username">
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.username">
+            <div class="error-message"
+              *ngIf="UpdateparentForm.get('username').hasError(validation.type) && (UpdateparentForm.get('username').dirty || UpdateparentForm.get('username').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <!-- <div class="col-sm-6 input-group">
+        <input rows="5" nbInput fullWidth value="{{ParentprofileData.password}}" shape="round" formControlName="password" placeholder="Password">
+
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.password">
+            <div class="error-message"
+              *ngIf="UpdateparentForm.get('password').hasError(validation.type) && (UpdateparentForm.get('password').dirty || UpdateparentForm.get('password').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- <div class="row full-name-inputs">
+      <div class="col-sm-6 input-group">
+        <nb-select multiple placeholder="Students" formControlName="students" shape="round">
+          <nb-option [value]="student.id" *ngFor="let student of Students">{{student.students}}</nb-option>
+        </nb-select>
+      </div> -->
+
+      <!-- <div class="col-sm-6 file-upload">
+                <div class="file-select">
+                  <div class="file-select-button" id="fileName">Choose File</div>
+                  <div class="file-select-name" id="noFile">No file chosen...</div>
+                  <input type="file" (change)="fileChangeEvent($event)" name="chooseFile" formControlName="photo" id="chooseFile" ng2FileSelect>
+              </div>
+                </div> -->
+    <!-- </div> -->
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-md btn-primary" (click)="update()">Update changes</button>
+</div>

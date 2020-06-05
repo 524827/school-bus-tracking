@@ -1,0 +1,103 @@
+.back {
+  zoom: 2.0;
+}
+
+#toolbar {
+  --background: #7986cb;
+  color: white;
+}
+
+ion-toolbar {
+  background-color: rgb(125, 140, 209);
+}
+
+
+
+.heading {
+  border: 1px solid;
+  width: 100%;
+  height: 25px;
+  background: #000000;
+  margin-top: 5px;
+}
+
+.iterableRow {
+  height: 80px;
+}
+
+.iterableCol {
+  padding-top: 20px;
+}
+
+.stopsLine {
+  background-color: rgb(179, 179, 179);
+  width: 12px;
+  height: 160%;
+  position: relative;
+  margin-left: 10px;
+}
+
+.timeline {
+  position: absolute;
+  content: '';
+  height: 160%;
+  width: 12px;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: gray;
+
+}
+
+.timeline::after {
+  content: '';
+  position: relative;
+  margin-left: 10px;
+  width: 12px;
+}
+
+.circleDiv {
+  background-color: rgb(51, 50, 50);
+  width: 12px;
+  height: 10px;
+  border-radius: 60%;
+  position: absolute;
+  top: 18%;
+  z-index: 1;
+}
+
+.busIcon {
+  position: absolute;
+  top: 5%;
+  zoom: 200%;
+  z-index: 1;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+}
+
+.schoolIcon {
+  position: absolute;
+  top: 15%;
+  zoom: 200%;
+  z-index: 1;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+}
+
+b {
+  color: rgb(53, 128, 199);
+}
+
+.refresh {
+  position: fixed;
+  zoom: 250%;
+  background-color: black;
+  border-radius: 50%;
+}
+
+ion-card {
+  height: auto;
+}

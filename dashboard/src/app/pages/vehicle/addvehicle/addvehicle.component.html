@@ -1,0 +1,162 @@
+<div class="row">
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Add Vehicle</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="vehicleForm">
+          <div class="row full-name-inputs">
+            <div class="col-sm-6 input-group">
+              <nb-select placeholder="Select Fuel Type" formControlName="fuelType" shape="round">
+                <nb-option value="Diesel">Diesel</nb-option>
+                <nb-option value="Petrol">Petrol</nb-option>
+                <nb-option value="Gas">Gas</nb-option>
+              </nb-select>
+            </div>
+            <div class="col-sm-6 input-group">
+              <nb-select placeholder="School Name" formControlName="school_id" shape="round">
+                <nb-option [value]="school.school_id" *ngFor="let school of schoolName">{{school.school_name}}
+                </nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <div class="col-sm-6 input-group">
+            <nb-select placeholder="Driver Name" formControlName="driver_id" shape="round">
+              <nb-option [value]="driver.driver_id" *ngFor="let driver of driverName">{{driver.driver_name}}</nb-option>
+            </nb-select>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              shape="semi-round"
+              formControlName="companyName"
+              placeholder="Vehicle Company Name"
+            />
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.companyName">
+                <div class="error-message" *ngIf="
+                    vehicleForm.get('companyName').hasError(validation.type) &&
+                    (vehicleForm.get('companyName').dirty || vehicleForm.get('companyName').touched)
+                  ">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              shape="semi-round"
+              formControlName="vehicleNumber"
+              placeholder="Vehicle Number"
+            />
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.vehicleNumber">
+                <div class="error-message" *ngIf="
+                    vehicleForm.get('vehicleNumber').hasError(validation.type) &&
+                    (vehicleForm.get('vehicleNumber').dirty ||
+                      vehicleForm.get('vehicleNumber').touched)
+                  ">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              shape="semi-round"
+              formControlName="chassisNumber"
+              placeholder="Vehicle Chassis Number"
+            />
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.chassisNumber">
+                <div class="error-message" *ngIf="
+                    vehicleForm.get('chassisNumber').hasError(validation.type) &&
+                    (vehicleForm.get('chassisNumber').dirty ||
+                      vehicleForm.get('chassisNumber').touched)
+                  ">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              shape="semi-round"
+              formControlName="modalType"
+              placeholder="Vehicle Modal Type"
+            />
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.modalType">
+                <div class="error-message" *ngIf="
+                    vehicleForm.get('modalType').hasError(validation.type) &&
+                    (vehicleForm.get('modalType').dirty || vehicleForm.get('modalType').touched)
+                  ">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              shape="semi-round"
+              formControlName="seatingCapacity"
+              placeholder="Vehicle Seating Capacity"
+            />
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.seatingCapacity">
+                <div class="error-message" *ngIf="
+                    vehicleForm.get('seatingCapacity').hasError(validation.type) &&
+                    (vehicleForm.get('seatingCapacity').dirty ||
+                      vehicleForm.get('seatingCapacity').touched)
+                  ">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="input-group">
+            <nb-card>
+              <nb-card-header>Insurence Validity</nb-card-header>
+              <nb-card-body style="display: flex;justify-content: space-between;">
+                <input style=" width: 100%;"
+                  formControlName="insurenceValidity"
+                  placeholder="Select Date"
+                  [nbDatepicker]="formpicker"
+                />
+                <nb-datepicker #formpicker></nb-datepicker>
+              </nb-card-body>
+            </nb-card>
+          </div>
+          <div class="file-upload">
+            <div class="file-select">
+              <div class="file-select-button" id="fileName">Choose File</div>
+              <div class="file-select-name" id="noFile">No file chosen...</div>
+              <input type="file" formControlName="photo" (change)="handleFileInput($event)" name="chooseFile" id="chooseFile" multiple/>
+            </div>
+            </div>
+            <div class="row">
+              <div class="container-btn col-sm-3">
+                <button nbButton status="success" class="btn-demo" (click)="onSubmit()">Submit</button>
+              </div>
+              <div class="container-btn col-sm-3">
+                <button nbButton status="danger" class="btn-demo">Clear</button>
+              </div>
+            </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

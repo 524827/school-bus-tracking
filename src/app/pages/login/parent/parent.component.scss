@@ -1,0 +1,99 @@
+ion-toolbar {
+  background-color: rgb(125, 140, 209);
+}
+
+
+#toolbar {
+  --background: #7986cb;
+  color: white;
+}
+
+.notify {
+  float: right;
+  width: 35px;
+  height: 35px;
+  color: #ffffff;
+  //margin-left: 30%;
+  position: absolute;
+}
+
+.badgenotify {
+  z-index: 1;
+  position: relative;
+  top: -6px;
+  right: -27px;
+  font-size: 8px;
+}
+
+ion-menu-button {
+  float: left;
+  color: #ffffff;
+}
+
+.notification {
+  zoom: 1.7;
+  margin-right: 5px
+}
+
+.sidemenu {
+  float: left;
+  width: 35px;
+  height: 35px;
+  color: #ffffff;
+  margin-left: 2%;
+}
+
+.headings {
+  color: rgb(125, 140, 209);
+  font-family: 'Roboto', sans-serif;
+}
+
+ion-label {
+  font-family: 'Roboto', sans-serif;
+}
+
+ion-card {
+  margin-top: 50px;
+}
+
+h3 {
+  font-size: 135%;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+ion-button {
+  width: 100%;
+  margin-top: 5%;
+}
+
+.divider {
+  border: 0.5px solid;
+  width: 100%;
+  margin-right: 10%;
+}
+
+.icon1,
+.icon2 {
+  height: 3vh;
+  width: 4vw;
+}
+
+.studentImage {
+  width: 400px;
+  height: 100px;
+}
+
+.optionButtons {
+  font-size: 12px;
+}
+
+.busIcon {
+  size: 75px;
+}
+
+.fontStyle {
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}

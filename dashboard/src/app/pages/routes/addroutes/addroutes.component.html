@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Add Routes</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="routeForm">
+          <div class="input-group" style="width: 50%">
+            <input type="text" nbInput fullWidth shape="semi-round" formControlName="routeID"
+              placeholder=" Enter Route ID"/>
+          </div>
+            <div class="row full-name-inputs">
+              <div class="col-sm-6 input-group">
+                <nb-select placeholder="Driver Name" formControlName="driver_id" shape="round">
+                  <nb-option [value]="driver.driver_id" *ngFor="let driver of driverName">{{driver.driver_name}}
+                  </nb-option>
+                </nb-select>
+              </div>
+              <div class="col-sm-6 input-group">
+                <nb-select placeholder="Vehicle Number" formControlName="vehicle_id" shape="round">
+                  <nb-option [value]="vehicle.vehicle_id" *ngFor="let vehicle of vehicleNumber">
+                    {{vehicle.vehicle_number}}</nb-option>
+                </nb-select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="container-btn col-sm-3">
+                <button nbButton status="success" size="xsmall" class="btn-demo" (click)="addButtonClick()">Add Routes</button>
+              </div>
+            </div>
+            <div formArrayName="routeDetails"
+              *ngFor="let routeDetails of routeForm.get('routeDetails').controls; let i = index" class="form-group">
+              <div [formGroupName]="i">
+                <div class="row full-name-inputs">
+                  <div class="col-sm-4 input-group">
+                    <input input-sm type="text" nbInput fullWidth formControlName="location"
+                     placeholder="Enter Bus Stops"/>
+                </div>
+                    <div class="col-sm-4 input-group">
+                      <input input-sm type="text" nbInput fullWidth formControlName="morningTime"
+                    placeholder="Enter Morning Time"/>
+                </div>
+                      <div class="col-sm-4 input-group">
+                        <input input-sm type="text" nbInput fullWidth formControlName="afternoonTime"
+                    placeholder="Enter Afternoon Time"/>
+               </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="container-btn col-sm-3">
+                      <button nbButton status="success" class="btn-demo" (click)="onSubmit()">Submit</button>
+                    </div>
+                    <div class="container-btn col-sm-3">
+                      <button nbButton status="danger" class="btn-demo">Clear</button>
+                    </div>
+                  </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

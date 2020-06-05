@@ -1,0 +1,68 @@
+<ion-header text-center>
+  <ion-toolbar class="background" color="#587FBB" id="toolbar">
+    <ion-buttons slot="start">
+      <!-- <ion-back-button defaultHref="/driver"></ion-back-button> -->
+      <ion-icon name="arrow-back" class="back" (click)="navigateBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon class="edit" name="create" (click)="editProfile(profileData.userId)"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="profileData">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3"></ion-col>
+      <ion-col size="6">
+        <img class="studimg" id="profilePicture"  (click)="presentActionSheet()" src=" http://d486468e.ngrok.io/images/userImages/{{profileData.userPhoto}}"  onError="this.src='../../../../assets/default/driver.png';" *ngIf="userType==='driver'" />
+
+
+        <img class="studimg" id="profilePicture"  (click)="presentActionSheet()" src=" http://d486468e.ngrok.io/images/userImages/{{profileData.userPhoto}}"  onError="this.src='../../../../assets/default/parents.png';" *ngIf="userType==='parent'" />
+
+
+        <img class="studimg" id="profilePicture"  (click)="presentActionSheet()" src=" http://d486468e.ngrok.io/images/userImages/{{profileData.userPhoto}}"  onError="this.src='../../../../assets/default/admin.png';" *ngIf="userType==='busCoordinator'" />
+
+      </ion-col>
+        <ion-col size="3"></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="card">
+    <ion-card class="profileCard">
+      <ion-card-title class="cardTitle">Personal Information</ion-card-title>
+      <ion-card-content class="content">
+        <ion-item>
+          <ion-icon name="person"></ion-icon>
+          <ion-label>{{profileData.userName}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="home"></ion-icon>
+          <ion-label>{{profileData.userAddress}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="call"></ion-icon>
+          <ion-label>{{profileData.userMobileNumber}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="mail"></ion-icon>
+          <ion-label>{{profileData.userEmail}}</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <!--  <ion-card class="profileCard" id="schoolProfileCard" *ngIf="userType != 'busCoordinator' "> -->
+    <ion-card class="profileCard" id="schoolProfileCard" *ngIf="schoolData">
+      <ion-card-title class="cardTitle">School Information</ion-card-title>
+      <ion-card-content class="content">
+        <ion-item>
+          <ion-icon name="school"></ion-icon>
+          <ion-label>{{schoolData.schoolName}}, {{schoolData.schoolAddress}}
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+
+  </ion-grid>
+</ion-content>

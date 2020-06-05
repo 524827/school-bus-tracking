@@ -1,0 +1,58 @@
+.addphoto {
+  float: right;
+  width: 30px;
+  margin-right: 30px;
+  margin-top: 120px;
+  position: relative;
+}
+
+.studimg {
+  margin-top: 5%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#toolbar {
+  --background: #7986cb;
+  color: white;
+}
+
+.back {
+  font-size: 35px;
+}
+
+.card {
+  margin-top: 170px;
+
+  .profileCard {
+    background-color: white;
+
+
+    .cardTitle {
+      font-family: 'Roboto', sans-serif;
+      margin-left: 50px;
+      margin-top: 20px;
+    }
+
+    .content {
+      margin-top: 0px;
+    }
+
+    ion-label {
+      font-family: 'Roboto', sans-serif;
+      padding: 10px;
+      white-space: pre-line !important;
+    }
+  }
+}
+
+ion-toolbar {
+  background-color: rgb(125, 140, 209);
+
+  .edit {
+    zoom: 1.5;
+    margin-right: 10px;
+  }
+}

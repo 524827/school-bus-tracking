@@ -1,0 +1,49 @@
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="crescent">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card>
+    <ion-grid>
+      <ion-row class="heading" color="#000000">
+        <ion-col size="8" text-center>
+          <ion-label color="light">All routes</ion-label>
+        </ion-col>
+        <ion-col size="4" text-center>
+          <ion-label color="light">Estimated time</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card-content padding margin *ngIf="backwardRoutes && backwardRoutes.length>0">
+      <ion-row class=" iterableRow" *ngFor="let route of backwardRoutes">
+        <ion-col size="3" text-left class="iterableCol">{{route.time}}</ion-col>
+        <ion-col size="3" class="iterableRow">
+          <ion-icon class="busIcon" src="../../../../../../../assets/images/materialIcons/whiteBus.svg"
+            *ngIf="route.location==currentArea"></ion-icon>
+          <div class="timeline">
+            <div class="circleDiv">
+            </div>
+          </div>
+        </ion-col>
+        <ion-col size="3" text-left class="iterableCol">{{route.location}}</ion-col>
+        <ion-col size="3" text-center class="iterableCol">{{route.estimateTime}}</ion-col>
+      </ion-row>
+    </ion-card-content>
+
+    <ion-card-content padding margin *ngIf="forwardRoutes && forwardRoutes.length>0">
+      <ion-row class=" iterableRow" *ngFor="let route of forwardRoutes">
+        <ion-col size="3" text-left class="iterableCol">{{route.time}}</ion-col>
+        <ion-col size="3" class="iterableRow">
+          <ion-icon class="busIcon" src="../../../../../../../assets/images/materialIcons/whiteBus.svg"
+            *ngIf="route.location==currentArea"></ion-icon>
+          <div class="timeline">
+            <div class="circleDiv">
+            </div>
+          </div>
+        </ion-col>
+        <ion-col size="4" text-left class="iterableCol">{{route.location}}</ion-col>
+        <ion-col size="2" text-center class="iterableCol">{{route.estimateTime}}</ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

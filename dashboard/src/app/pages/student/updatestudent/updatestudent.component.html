@@ -1,0 +1,93 @@
+<div class="modal-header">
+  <span>{{ modalHeader }}</span>
+  <button class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="UpdatestudentForm">
+    <div class="input-group">
+      <input type="text" nbInput fullWidth value="{{studentProfileData.studentName}}" shape="semi-round" formControlName="studentName" placeholder="Student Name">
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.fullName">
+          <div class="error-message"
+            *ngIf="UpdatestudentForm.get('studentName').hasError(validation.type) && (UpdatestudentForm.get('studentName').dirty || UpdatestudentForm.get('studentName').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="row full-name-inputs">
+        <div class="col-sm-4 input-group">
+            <select  class="color" placeholder="Gender" formControlName="gender" shape="round">
+              <option value="" selected disabled hidden>Gender</option>
+              <option [value]="gender" *ngFor="let gender of gender">{{gender}}</option>
+            </select>
+          </div>
+          <div class="col-sm-4 input-group">
+            <select class="color" placeholder="Class" formControlName="class" shape="round">
+              <option value="" class="studdropdown" selected disabled hidden>Class</option>
+              <option [value]="class" *ngFor="let class of studClass">{{class}}</option>
+            </select>
+          </div>
+          <div class="col-sm-4 input-group">
+            <select  class="color" placeholder="Division" formControlName="division" shape="round">
+              <option value="" selected disabled hidden>Division</option>
+              <option [value]="div" *ngFor="let div of division">{{div}}</option>
+            </select>
+          </div>
+    </div>
+
+    <div class="input-group">
+      <textarea rows="5" nbInput fullWidth value="{{studentProfileData.cur_address}}" shape="round" formControlName="currentAddress" placeholder="Current Address"></textarea>
+
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.address">
+          <div class="error-message"
+            *ngIf="UpdatestudentForm.get('currentAddress').hasError(validation.type) && (UpdatestudentForm.get('currentAddress').dirty || UpdatestudentForm.get('currentAddress').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="input-group">
+      <textarea rows="5" nbInput fullWidth value="{{studentProfileData.per_address}}" shape="round" formControlName="permanentAddress" placeholder=" Permanent Address"></textarea>
+
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.address">
+          <div class="error-message"
+            *ngIf="UpdatestudentForm.get('permanentAddress').hasError(validation.type) && (UpdatestudentForm.get('permanentAddress').dirty || UpdatestudentForm.get('permanentAddress').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <input type="text" nbInput fullWidth value="{{studentProfileData.stopLocation}}" shape="semi-round" formControlName="studentStop" placeholder="Stop Location">
+
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.address">
+          <div class="error-message"
+            *ngIf="UpdatestudentForm.get('studentStop').hasError(validation.type) && (UpdatestudentForm.get('studentStop').dirty || UpdatestudentForm.get('studentStop').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+
+    <div class="file-upload">
+      <div class="file-select">
+        <!-- <div class="file-select-button" id="fileName">Choose File</div>
+        <div class="file-select-name" id="noFile">No file chosen...</div> -->
+        <input type="file" (change)="fileChangeEvent($event)" name="chooseFile" formControlName="photo" id="chooseFile" ng2FileSelect>
+              </div>
+      </div>
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-md btn-primary" (click)="update()" (click)="closeModal()">Update changes</button>
+</div>

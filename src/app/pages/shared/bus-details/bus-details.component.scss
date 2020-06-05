@@ -1,0 +1,61 @@
+.back {
+  zoom: 2.0;
+}
+
+#toolbar {
+  --background: #7986cb;
+  color: white;
+}
+
+ion-toolbar {
+  background-color: rgb(125, 140, 209);
+}
+
+
+.headings {
+
+  color: rgb(125, 140, 209);
+  font-family: 'Roboto', sans-serif;
+}
+
+ion-card {
+
+  margin: 10px;
+  height: auto;
+}
+
+ion-card-header {
+  font-size: 25px;
+  color: rgb(125, 140, 209);
+}
+
+ion-content {
+  --background-color: #dbd5d5;
+}
+
+
+
+
+.icon {
+  color: rgb(147, 148, 153);
+  font-size: 20px;
+}
+
+
+
+
+back {
+  zoom: 1.5;
+}
+
+img {
+  width: 200px;
+  height: 150px;
+}
+
+
+.fontStyle {
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}

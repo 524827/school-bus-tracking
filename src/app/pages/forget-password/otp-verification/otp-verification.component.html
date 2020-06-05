@@ -1,0 +1,39 @@
+<ion-fab vertical="top" horizontal="start" slot="fixed">
+  <ion-fab-button>
+    <ion-icon class="backNavigationIcon" name="arrow-back" (click)="navigate()"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle text-center class="enterOTPHeader">Enter Your OTP</ion-card-subtitle>
+
+      <ion-card-title text-center>
+        <ion-icon name="key" class="keyIcon"></ion-icon>
+      </ion-card-title>
+
+      <ion-card-subtitle text-center class="enterOTPMessage">{{enterOTPMessage}}</ion-card-subtitle>
+
+      <ion-card-content>
+        <form [formGroup]="otpCheckingForm" (ngSubmit)="isOTPCorrect(otpCheckingForm)">
+          <ion-input class="enterOTPInput" formControlName="userOTP" placeholder="Enter OTP">
+          </ion-input>
+
+          <ion-button expand="block" class="otpSubmitButton" type="submit" [disabled]="otpCheckingForm.invalid"
+            margin-top>Next
+          </ion-button>
+        </form>
+      </ion-card-content>
+
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header class="otpTimer" id="otpTimer" text-center>
+
+    </ion-card-header>
+    <ion-title class="otpTimer" text-center>Time Remaing</ion-title>
+  </ion-card>
+</ion-content>

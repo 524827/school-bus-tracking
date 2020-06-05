@@ -1,0 +1,106 @@
+<div class="modal-header">
+  <span>{{ modalHeader }}</span>
+  <button class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="UpdateschoolForm">
+    <div class="input-group">
+      <input type="text" nbInput fullWidth value={{SchoolprofileData.schoolName}} shape="semi-round" formControlName="schoolName" placeholder="School Name">
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.schoolName">
+          <div class="error-message"
+            *ngIf="UpdateschoolForm.get('schoolName').hasError(validation.type) && (UpdateschoolForm.get('schoolName').dirty || UpdateschoolForm.get('schoolName').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <br>
+    <div class="input-group">
+      <input type="text" nbInput fullWidth value={{SchoolprofileData.branchName}} shape="semi-round" formControlName="branchName" placeholder="Branch Name">
+      </div>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.branchName">
+          <div class="error-message"
+            *ngIf="UpdateschoolForm.get('branchName').hasError(validation.type) && (UpdateschoolForm.get('branchName').dirty || UpdateschoolForm.get('branchName').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      <br>
+      <div class="row full-name-inputs">
+        <div class="col-sm-6 input-group">
+          <input type="text" nbInput fullWidth value={{SchoolprofileData.officeNumber}} formControlName="officeNumber" placeholder="Office Number">
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.mobileNumber">
+              <div class="error-message"
+                *ngIf="UpdateschoolForm.get('officeNumber').hasError(validation.type) && (UpdateschoolForm.get('officeNumber').dirty || UpdateschoolForm.get('officeNumber').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <br>
+        <div class="col-sm-6 input-group">
+          <input type="text" nbInput fullWidth value={{SchoolprofileData.officeEmail}} formControlName="officeEmail" placeholder="Office Email">
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.email">
+              <div class="error-message"
+                *ngIf="UpdateschoolForm.get('officeEmail').hasError(validation.type) && (UpdateschoolForm.get('officeEmail').dirty || UpdateschoolForm.get('officeEmail').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="input-group">
+        <textarea rows="5" nbInput fullWidth value={{SchoolprofileData.address}} shape="round" formControlName="address" placeholder="Address"></textarea>
+      </div>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.address">
+          <div class="error-message"
+            *ngIf="UpdateschoolForm.get('address').hasError(validation.type) && (UpdateschoolForm.get('address').dirty || UpdateschoolForm.get('address').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      <br>
+
+      <div class="row full-name-inputs">
+        <div class="col-sm-4 input-group">
+            <select  class="color" placeholder="Student" formControlName="student" shape="round">
+              <option value="" selected disabled hidden>Student</option>
+              <option [value]="student.id" *ngFor="let student of Students">{{student.students}}</option>
+            </select>
+          </div>
+          <div class="col-sm-4 input-group">
+            <select class="color" placeholder="Vehicle" formControlName="vehicle" shape="round">
+              <option value=""  selected disabled hidden>Vehicle</option>
+              <option [value]="vehicle.id" *ngFor="let vehicle of vehicles">{{vehicle.vehicleNumber}}</option>
+            </select>
+          </div>
+          <div class="col-sm-4 input-group">
+            <select  class="color" placeholder="Driver" formControlName="driver" shape="round">
+              <option value="" selected disabled hidden>Driver</option>
+              <option [value]="driver.id" *ngFor="let driver of Driver">{{driver.driverName}}</option>
+            </select>
+          </div>
+    </div>
+
+
+      <div class="file-upload">
+        <div class="file-select">
+          <!-- <div class="file-select-button" id="fileName">Choose File</div>
+          <div class="file-select-name" id="noFile">No file chosen...</div> -->
+          <input type="file" (change)="fileChangeEvent($event)" name="chooseFile" formControlName="photo" id="chooseFile" ng2FileSelect>
+              </div>
+        </div>
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-md btn-primary" (click)="update()">Update changes</button>
+</div>

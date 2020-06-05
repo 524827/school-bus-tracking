@@ -1,0 +1,133 @@
+<div class="col-lg-6">
+</div>
+<div class="col-lg-6">
+  <nb-card>
+    <nb-card-header>Add Parents Details</nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="parentForm" (ngSubmit)="onSubmit(parentForm)">
+        <div class="input-group">
+          <input type="text" nbInput fullWidth shape="semi-round" formControlName="parentName" placeholder="Parent Name">
+          </div>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.fullname">
+              <div class="error-message"
+                *ngIf="parentForm.get('fullName').hasError(validation.type) && (parentForm.get('fullName').dirty || parentForm.get('fullName').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="row full-name-inputs">
+            <div class="col-sm-6 input-group">
+              <input type="text" nbInput fullWidth formControlName="father_mobileNumber" placeholder="Father Mobile Number">
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.mobileNumber">
+                  <div class="error-message"
+                    *ngIf="parentForm.get('father_mobileNumber').hasError(validation.type) && (parentForm.get('father_mobileNumber').dirty || parentForm.get('father_mobileNumber').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div class="col-sm-6 input-group">
+              <input type="text" nbInput fullWidth formControlName="mother_mobileNumber" placeholder="Mother Mobile Number">
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.mobileNumber">
+                  <div class="error-message"
+                    *ngIf="parentForm.get('mother_mobileNumber').hasError(validation.type) && (parentForm.get('mother_mobileNumber').dirty || parentForm.get('mother_mobileNumber').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+          <div class="row full-name-inputs">
+            <div class="col-sm-6 input-group">
+              <input type="text" nbInput fullWidth formControlName="landline_Number" placeholder="Landline Number">
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.altNumber">
+                  <div class="error-message"
+                    *ngIf="parentForm.get('landline_Number').hasError(validation.type) && (parentForm.get('landline_Number').dirty || parentForm.get('landline_Number').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div class="col-sm-6 input-group">
+              <input type="text" nbInput fullWidth formControlName="alternate_Number" placeholder="Alternate Number">
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.altNumber">
+                  <div class="error-message"
+                    *ngIf="parentForm.get('alternate_Number').hasError(validation.type) && (parentForm.get('alternate_Number').dirty || parentForm.get('alternate_Number').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <input rows="5" nbInput fullWidth shape="round" formControlName="email" placeholder="Email-Id">
+          </div>
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.email">
+                <div class="error-message"
+                  *ngIf="parentForm.get('email').hasError(validation.type) && (parentForm.get('email').dirty || parentForm.get('email').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+            <div class="row full-name-inputs">
+              <div class="col-sm-6 input-group">
+                <input rows="5" nbInput fullWidth shape="round" formControlName="username" placeholder="Username">
+          </div>
+                <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.username">
+                    <div class="error-message"
+                      *ngIf="parentForm.get('username').hasError(validation.type) && (parentForm.get('username').dirty || parentForm.get('username').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+                <div class="col-sm-6 input-group">
+                  <input rows="5" nbInput fullWidth shape="round" formControlName="password" placeholder="Password">
+          </div>
+                  <div class="validation-errors">
+                    <ng-container *ngFor="let validation of validation_messages.password">
+                      <div class="error-message"
+                        *ngIf="parentForm.get('password').hasError(validation.type) && (parentForm.get('password').dirty || parentForm.get('password').touched)">
+                        {{ validation.message }}
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+
+
+                <div class="row full-name-inputs">
+                  <div class="col-sm-6 input-group">
+                    <nb-select multiple placeholder="Students" formControlName="students" shape="round">
+                      <nb-option [value]="student.id" *ngFor="let student of Students">{{student.students}}</nb-option>
+                    </nb-select>
+                  </div>
+
+
+                  <div class="col-sm-6 file-upload">
+                    <div class="file-select">
+                      <div class="file-select-button" id="fileName">Choose File</div>
+                      <div class="file-select-name" id="noFile">No file chosen...</div>
+                      <input type="file" (change)="fileChangeEvent($event)" name="chooseFile" formControlName="photo" id="chooseFile" ng2FileSelect>
+                  </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="container-btn col-sm-3">
+                      <button nbButton status="success" class="btn-demo" type="submit">Submit</button>
+                    </div>
+                    <div class="container-btn col-sm-3">
+                      <button nbButton status="danger" class="btn-demo" (click)="onClear()">Clear</button>
+                    </div>
+                  </div>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>

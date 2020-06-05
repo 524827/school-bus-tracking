@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar id="toolbar" color="#7986cb">
+    <ion-searchbar showCancelButton="focus"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="card-alignment">
+  <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="crescent">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card [routerLink]="['/login', school._id]" *ngFor="let school of schooldetails">
+    <img [src]="(schoolImages)+'/'+(school.school_photos) | safe:'url'"/>
+    <!-- <img src="<../../../../../assets/images/{{school.school_photos}} " /> -->
+    <div class="card-title">{{ school.school_name }}</div>
+    <div class="card-subtitle">{{ school.school_address }}</div>
+  </ion-card>
+</ion-content>

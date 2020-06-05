@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-7">
+    <nb-card>
+      <nb-card-header>Update Routes</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="routeForm">
+          <div class="input-group" style="width: 50%">
+            <input type="text" nbInput fullWidth shape="semi-round" formControlName="routeID"
+              placeholder=" Enter Route ID"/>
+          </div>
+            <div class="row full-name-inputs">
+              <div class="col-sm-4 input-group select-driver">
+                <select formControlName="driver_id" placeholder="Driver Name">
+                    <option value="" selected disabled hidden>Driver Name</option>
+                  <option [value]="driver.driver_id" *ngFor="let driver of driverName">{{driver.driver_name}}</option>
+                </select>
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-4 input-group select-vehicle">
+                <select placeholder=" Vehicle Number" formControlName="vehicle_id" shape="round">
+                <option value="" selected disabled hidden>Vehicle Name</option>
+                <option [value]="vehicle.vehicle_id" *ngFor="let vehicle of vehicleNumber">{{vehicle.vehicle_number}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="container-btn update">
+                <button nbButton status="success" class="btn-demo" (click)="onSubmit()">Update</button>
+              </div>
+              <div class="container-btn clear">
+                <button nbButton status="danger" class="btn-demo">Clear</button>
+              </div>
+            </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-6"></div>
+</div>
